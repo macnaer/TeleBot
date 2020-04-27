@@ -1,0 +1,74 @@
+#!groovy
+//  groovy Jenkinsfile
+properties([disableConcurrentBuilds()])
+
+pipeline  {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        //stage("Create docker image") {
+        //    steps {
+        //        echo 'Creating docker image ...'
+        //        dir('.'){
+        //            sh "docker build -t macnaer/react-contact-list . "
+        //        }
+        //    }
+        //}
+        //stage("docker login") {
+        //    steps {
+        //        echo " ============== docker login =================="
+        //        withCredentials([usernamePassword(credentialsId: 'DockerHub-Credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        //            sh '''
+        //            docker login -u $USERNAME -p $PASSWORD
+        //            '''
+        //        }
+        //    }
+        //}
+        //stage("docker push") {
+        //    steps {
+        //        echo " ============== pushing image =================="
+        //        sh '''
+        //        docker push macnaer/react-contact-list:latest
+        //        '''
+        //    }
+        //}
+        //stage("docker stop") {
+        //    steps {
+        //        echo " ============== stoping all images =================="
+        //        sh '''
+        //        docker stop chatterbox
+        //        '''
+        //    }
+        //} 
+        //stage("docker remove") {
+        //    steps {
+        //        echo " ============== removing all docker containers =================="
+        //        sh '''
+        //        docker rm chatterbox
+        //        '''
+        //    }
+        //}
+        //stage("docker run") {
+        //    steps {
+        //        echo " ============== starting chatterbox =================="
+        //        sh '''
+        //        docker run -d --restart=always --name chatterbox -p 3000:3000 macnaer/chatterbox
+        //        '''
+        //    }
+        //}
+        // stage("Deploy to stage server") {
+        //     steps {
+        //         echo " ============== Running playbook =================="
+        //         sh '''
+        //         ansible-playbook toolbox/ansible/playbooks/demloyToStageServer.yml
+        //         '''
+        //     }
+        //}
+
+    }
+}
