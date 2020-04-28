@@ -1,4 +1,4 @@
-#import telebot
+import telebot
 import psycopg2
 import requests
 from lib.settings import token, add_corona, Show_Cases, Connect_to_Database
@@ -11,8 +11,8 @@ def func(URL):
     return response.json()
 
 
-Covid = requests.get(URL)
-Covid = Covid.json()
+# Covid = requests.get(URL)
+# Covid = Covid.json()
 
 
 def Update_db(Covid):
@@ -49,10 +49,10 @@ def Menu():
             exit = False
 
 
-Menu()
+# Menu()
 
 
-"""bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(token)
 
 
 @bot.message_handler(commands=['about', 'help', 'start'])
@@ -73,4 +73,4 @@ def handler_text(message):
         bot.send_message(message.chat.id, "Use /help for manual")
 
 
-bot.polling(none_stop=True)"""
+bot.polling(none_stop=True)
