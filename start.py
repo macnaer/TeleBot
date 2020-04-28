@@ -29,7 +29,7 @@ def Update_db(Covid):
                    NewDeaths, TotalDeaths, NewRecovered, TotalRecovered)
 
 
-def Menu(Covid):
+def Menu():
     exit = True
     while exit:
         print("If you are launching the programe for the first time Enter ( 1 ), if NOT , follow the instructions!\n ")
@@ -49,7 +49,7 @@ def Menu(Covid):
             exit = False
 
 
-Menu(Covid)
+Menu()
 
 
 """bot = telebot.TeleBot(token)
